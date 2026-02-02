@@ -10,6 +10,7 @@ class LineTracking:
         self.right_sensor = right_sensor
         self.middle_sensor = middle_sensor
         self.motor = motor_configurations
+        self.buzzer_pin = 17
 
     def setup(self):
         # GPIO_PINS.setmode(GPIO_PINS.BOARD)
@@ -17,6 +18,8 @@ class LineTracking:
         GPIO_PINS.setup(self.left_sensor,GPIO_PINS.IN)
         GPIO_PINS.setup(self.middle_sensor,GPIO_PINS.IN)
         GPIO_PINS.setup(self.right_sensor,GPIO_PINS.IN)
+        GPIO_PINS.setup(self.buzzer_pin, GPIO_PINS.OUT)
+        GPIO_PINS.output(self.buzzer_pin,False)
         GPIO_PINS.setwarnings(False)
 
 
